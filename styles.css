@@ -1,0 +1,274 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(to bottom, #ff7e5f, #feb47b); /* Soft gradient background */
+    padding: 20px;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    perspective: 1500px; /* Adds perspective for 3D elements */
+  }
+  
+  /* Header Styling */
+  h1 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 2s ease-out, moveDown 1s ease-out;
+  }
+  
+  /* Winner Message Popper Effect */
+  #winner-msg {
+    font-size: 1.5rem;
+    color: #f44336;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+    opacity: 0; /* Initially hidden */
+    animation: pop 1s ease-out forwards, fadeIn 2s ease-out forwards; /* Pop and fade-in effect */
+  }
+  
+  /* Pop effect on winner's message */
+  @keyframes pop {
+    0% {
+      transform: scale(0.8) rotate(0deg);
+    }
+    50% {
+      transform: scale(1.1) rotate(10deg); /* Scale up and rotate a bit */
+    }
+    100% {
+      transform: scale(1) rotate(0deg); /* Return to normal */
+    }
+  }
+  
+  /* Score Container Styling */
+  .score-container {
+    margin: 20px;
+    transform: rotateY(10deg); /* Rotate container slightly for 3D effect */
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  /* Styling the score */
+  .score {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Subtle text shadow for depth */
+  }
+  
+  /* Options container */
+  .options-container {
+    margin: 30px 0;
+    animation: slideUp 1.5s ease-out;
+  }
+  
+  /* Button container with flexbox for alignment */
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    animation: fadeInUp 1.5s ease-out;
+  }
+  
+  /* Styling the buttons with 3D effect */
+  .btn {
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transform-style: preserve-3d; /* Enable 3D transforms */
+    animation: bounceIn 0.5s ease-out; /* Bounce effect on button load */
+  }
+  
+  .btn:hover {
+    background-color: #45a049;
+    transform: scale(1.1) rotateX(10deg) rotateY(10deg); /* Rotate and scale for a 3D hover effect */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3); /* Stronger shadow for depth */
+    animation: pulse 0.5s infinite alternate; /* Pulse effect on hover */
+  }
+  
+  /* Results container */
+  .results-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    color: white;
+    font-size: 1.2rem;
+    transform: rotateY(5deg); /* Apply subtle 3D effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeInSlide 1s ease-out; /* Slide-in animation for result */
+  }
+  
+  /* Reset Game Button Styling */
+  #reset-game-btn {
+    display: none;
+    padding: 12px 25px;
+    background-color: #f44336;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation: bounceIn 0.5s ease-out; /* Bounce effect on button load */
+  }
+  
+  #reset-game-btn:hover {
+    background-color: #e53935;
+    transform: scale(1.1) rotateX(5deg) rotateY(5deg); /* Subtle 3D effect on hover */
+    animation: pulse 0.5s infinite alternate;
+  }
+  
+  /* Rules container */
+  .rules-container {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-out;
+    transform: rotateY(-5deg); /* Apply 3D effect to the rules */
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes moveDown {
+    from {
+      transform: translateY(-50px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInSlide {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0.8);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1.2);
+    }
+  }
+  
+  @keyframes pop {
+    0% {
+      transform: scale(0.8) rotate(0deg);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.1) rotate(10deg);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+  }
+  
+  /* Mobile responsiveness for smaller screens */
+  @media screen and (max-width: 600px) {
+    body {
+      padding: 10px;
+    }
+  
+    h1 {
+      font-size: 2rem; /* Adjust font size for small screens */
+    }
+  
+    .score-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .btn-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    .btn {
+      width: 80%;
+      font-size: 1.1rem;
+    }
+  
+    #reset-game-btn {
+      width: 80%;
+      font-size: 1.1rem;
+    }
+  
+    .results-container {
+      font-size: 1rem;
+    }
+  
+    .rules-container {
+      font-size: 0.9rem;
+      padding: 12px;
+    }
+  }
+  
